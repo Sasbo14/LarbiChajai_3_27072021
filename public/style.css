@@ -1,0 +1,352 @@
+@charset "UTF-8";
+/*****RESET*******/
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* Le directory base/ contient les fichiers qui définissent 
+les fondations de votre site, par exemple la police de caractères 
+et les normes que vous voulez appliquer sur tout votre site, 
+telles que le box-sizing ;*/
+html,
+body {
+  font-family: "Roboto", sans-serif;
+}
+
+h2 {
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+
+/* PARTIELS : dans utils/, vous rangez vos variables, fonctions, mixins et les  
+%placeholders pour les extensions (si vous en utilisez) */
+/* PARTIELS : dans utils/, vous rangez vos variables, fonctions, mixins et les  
+%placeholders pour les extensions (si vous en utilisez)*/
+/*layouts/ est le dossier où vous mettez vos blocs BEM qui contiennent ce qui est
+réutilisable, par exemple un header pour les mises en page de grande
+taille ou un footer */
+.logo {
+  display: flex;
+  justify-content: center;
+  padding: 15px 0px;
+}
+.logo img {
+  width: 50%;
+}
+
+button {
+  border: 1px solid #ff79da;
+  background-color: #9356dc;
+  color: white;
+  padding: 15px 20px;
+  margin-top: 25px;
+  margin-bottom: 40px;
+  border-radius: 25px;
+  font-weight: 500;
+  font-size: 0.8rem;
+  box-shadow: 1px 5px 10px rgba(0, 0, 0, 0.25);
+  background: linear-gradient(to bottom right, #ff79da, #9356dc);
+  cursor: pointer;
+}
+button:active {
+  background: linear-gradient(to bottom right, #fface8, #ae80e5);
+  box-shadow: 1px 5px 10px rgba(0, 0, 0, 0.5);
+}
+button:hover {
+  background: linear-gradient(to bottom right, #fface8, #ae80e5);
+  box-shadow: 1px 5px 10px rgba(0, 0, 0, 0.5);
+}
+
+header {
+  box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.25);
+  position: relative;
+  z-index: 1;
+}
+
+.location {
+  display: flex;
+  justify-content: center;
+  padding: 15px 0px;
+  background-color: #eaeaea;
+  position: relative;
+}
+.location__text {
+  padding: 0px 20px;
+}
+
+.hero {
+  display: block;
+  background-color: #f7f7f7;
+  text-align: center;
+}
+.hero__title {
+  padding-top: 2rem;
+}
+.hero__para {
+  font-weight: 300;
+  padding-top: 15px;
+}
+
+.operation {
+  padding: 30px 15px;
+}
+.operation__title {
+  padding-bottom: 30px;
+}
+.operation__content {
+  list-style: none;
+  counter-reset: compteListe;
+}
+.operation__step {
+  background-color: #f7f7f7;
+  border-radius: 20px;
+  margin-bottom: 30px;
+  padding: 25px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.operation__step::before {
+  counter-increment: compteListe;
+  content: counter(compteListe) " ";
+  background-color: #9356dc;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 25px;
+  height: 25px;
+  border-radius: 20px;
+  position: absolute;
+  left: -0.5rem;
+}
+.operation__step .fa-mobile-alt {
+  padding-left: 15px;
+}
+.operation__icon {
+  margin-right: 1.5rem;
+  justify-content: center;
+  align-items: center;
+  color: #7e7e7e;
+}
+.operation span {
+  font-weight: 700;
+}
+
+.menu {
+  background-color: #f7f7f7;
+  padding: 50px 15px 20px 15px;
+}
+.menu__title {
+  padding-bottom: 20px;
+}
+.menu__cards {
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  background-color: white;
+  border-radius: 20px;
+}
+.menu__button {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+}
+
+.card {
+  text-decoration: none;
+  color: black;
+}
+.card__img {
+  position: relative;
+  width: 100%;
+  height: 190px;
+}
+.card__img img {
+  border-top-right-radius: 20px;
+  border-top-left-radius: 20px;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.card__label {
+  background-color: #99e2d0;
+  color: #2c9c81;
+  border-radius: 4px;
+  padding: 10px 20px;
+  position: absolute;
+  top: 15px;
+  right: 15px;
+}
+.card__description {
+  padding-top: 15px;
+  padding-left: 10px;
+  position: relative;
+}
+.card__title {
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+.card__para {
+  margin-top: 10px;
+  font-weight: 300;
+}
+
+/*layouts/ est le dossier où vous mettez vos blocs BEM qui contiennent ce qui est
+réutilisable, par exemple un header pour les mises en page de grande
+taille ou un footer */
+.footer {
+  background-color: #353535;
+  color: white;
+}
+.footer__title {
+  font-family: "Shrikhand", cursive;
+  font-size: 1.5rem;
+  font-weight: 300;
+  padding: 30px 25px;
+}
+.footer__list {
+  padding: 0px 0px 30px 20px;
+}
+.footer__span {
+  padding-left: 7px;
+}
+.footer__element {
+  padding: 15px 10px;
+}
+.footer__element a {
+  color: white;
+  outline: none;
+  text-decoration: none;
+}
+.footer__element i {
+  padding-right: 10px;
+}
+
+/*# sourceMappingURL=style.css.map */

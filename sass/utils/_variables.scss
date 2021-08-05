@@ -1,0 +1,12 @@
+/* PARTIELS : dans utils/, vous rangez vos variables, fonctions, mixins et les  
+%placeholders pour les extensions (si vous en utilisez) */
+
+$color-primary: #9356dc;
+$color-secondary: #ff79da;
+$color-tertiary: #99e2d0;
+$light-color-primary: lighten($color-primary, 10%);
+$light-color-secondary: lighten($color-secondary, 10%);
+$light-color-tertiary: lighten($color-tertiary, 10%);
+$ligth-gray: lighten(#eaeaea, 5%);
+$dark-color-tertiary: darken($color-tertiary, 35%);
+$padding-list: 15px 10px;

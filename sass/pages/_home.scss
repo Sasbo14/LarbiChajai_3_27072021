@@ -1,0 +1,153 @@
+header {
+  box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.25);
+  position: relative;
+  z-index: 1;
+}
+
+.location {
+  display: flex;
+  justify-content: center;
+  padding: 15px 0px;
+  background-color: #eaeaea;
+  position: relative;
+
+  &__text {
+    padding: 0px 20px;
+  }
+}
+
+.hero {
+  display: block;
+  background-color: $ligth-gray;
+  text-align: center;
+
+  &__title {
+    padding-top: 2rem;
+  }
+
+  &__para {
+    font-weight: 300;
+    padding-top: 15px;
+  }
+}
+
+.operation {
+  padding: 30px 15px;
+
+  &__title {
+    padding-bottom: 30px;
+  }
+
+  &__content {
+    list-style: none;
+    counter-reset: compteListe;
+  }
+
+  &__step {
+    background-color: $ligth-gray;
+    border-radius: 20px;
+    margin-bottom: 30px;
+    padding: 25px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+
+    &::before {
+      counter-increment: compteListe;
+      content: counter(compteListe) " ";
+      background-color: $color-primary;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 25px;
+      height: 25px;
+      border-radius: 20px;
+      position: absolute;
+      left: -0.5rem;
+    }
+
+    & .fa-mobile-alt {
+      padding-left: 15px;
+    }
+  }
+
+  &__icon {
+    margin-right: 1.5rem;
+    justify-content: center;
+    align-items: center;
+    color: #7e7e7e;
+  }
+
+  & span {
+    font-weight: 700;
+  }
+}
+
+.menu {
+  background-color: $ligth-gray;
+  padding: 50px 15px 20px 15px;
+
+  &__title {
+    padding-bottom: 20px;
+  }
+
+  &__cards {
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    background-color: white;
+    border-radius: 20px;
+  }
+
+  &__button {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+  }
+}
+
+.card {
+  text-decoration: none;
+  color: black;
+
+  &__img {
+    position: relative;
+    width: 100%;
+    height: 190px;
+  }
+
+  &__img img {
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  &__label {
+    background-color: $color-tertiary;
+    color: $dark-color-tertiary;
+    border-radius: 4px;
+    padding: 10px 20px;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+  }
+
+  &__description {
+    padding-top: 15px;
+    padding-left: 10px;
+    position: relative;
+  }
+
+  &__title {
+    font-size: 1.1rem;
+    font-weight: 700;
+  }
+
+  &__para {
+    margin-top: 10px;
+    font-weight: 300;
+  }
+}
