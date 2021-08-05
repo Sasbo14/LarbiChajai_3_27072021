@@ -10,3 +10,16 @@ taille ou un footer */
     width: 50%;
   }
 }
+
+.header {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  padding: 15px 0px;
+  &__logo img {
+    width: 50%;
+  }
+
+  &__arrow {
+    padding-left: 20px;
+  }
+}
