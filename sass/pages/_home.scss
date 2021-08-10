@@ -43,6 +43,12 @@ header {
     counter-reset: compteListe;
   }
 
+  &__steps {
+    @include desktop {
+      display: flex;
+    }
+  }
+
   &__step {
     background-color: $ligth-gray;
     border-radius: 20px;
@@ -52,6 +58,11 @@ header {
     align-items: center;
     justify-content: center;
     position: relative;
+
+    @include desktop {
+      width: 100%;
+      margin: 0px 15px;
+    }
 
     &::before {
       counter-increment: compteListe;
@@ -88,6 +99,14 @@ header {
 .restaurant {
   background-color: $ligth-gray;
   padding: 50px 15px 20px 15px;
+
+  &__content {
+    @include desktop {
+      display: grid;
+      grid: 0.1 fr 1fr 1fr/ 1fr 1fr;
+      column-gap: 15px;
+    }
+  }
 
   &__title {
     padding-bottom: 20px;
@@ -151,5 +170,27 @@ header {
   &__para {
     margin-top: 10px;
     font-weight: 300;
+  }
+
+  @include desktop {
+    &__topleft--desktop {
+      grid-row: 2 / 3;
+      grid-column: 1 / 2;
+    }
+
+    &__topright--desktop {
+      grid-row: 2 / 3;
+      grid-column: 2 / 3;
+    }
+
+    &__bottomleft--desktop {
+      grid-row: 3 / 4;
+      grid-column: 1 / 2;
+    }
+
+    &__bottomright--desktop {
+      grid-row: 3 / 4;
+      grid-column: 2 / 3;
+    }
   }
 }

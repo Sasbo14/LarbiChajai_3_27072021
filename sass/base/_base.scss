@@ -3,30 +3,38 @@ les fondations de votre site, par exemple la police de caractères
 et les normes que vous voulez appliquer sur tout votre site, 
 telles que le box-sizing ;*/
 
+$font-size: (
+  h2: 1.3rem,
+  h3: 1rem,
+  h4: 0.9rem,
+  p: 0.8rem,
+);
+
 html,
 body {
   font-family: "Roboto", sans-serif;
+  font-size: 16px;
 }
 
 h2 {
-  font-size: 1.3rem;
+  font-size: map-get($font-size, h2);
   font-weight: 600;
 }
 
 h3 {
-  font-size: 1rem;
+  font-size: map-get($font-size, h3);
   font-weight: 400;
 }
 
 h4 {
-  font-size: 0.8rem;
+  font-size: map-get($font-size, h4);
   font-weight: 700;
   padding-bottom: 5px;
   white-space: nowrap;
 }
 
 h4 + p {
-  font-size: 0.67rem;
+  font-size: map-get($font-size, p);
   font-weight: 300;
   overflow: hidden;
   text-overflow: ellipsis;

@@ -137,6 +137,7 @@ telles que le box-sizing ;*/
 html,
 body {
   font-family: "Roboto", sans-serif;
+  font-size: 16px;
 }
 
 h2 {
@@ -150,14 +151,14 @@ h3 {
 }
 
 h4 {
-  font-size: 0.8rem;
+  font-size: 0.9rem;
   font-weight: 700;
   padding-bottom: 5px;
   white-space: nowrap;
 }
 
 h4 + p {
-  font-size: 0.67rem;
+  font-size: 0.8rem;
   font-weight: 300;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -166,6 +167,7 @@ h4 + p {
 
 /* PARTIELS : dans utils/, vous rangez vos variables, fonctions, mixins et les  
 %placeholders pour les extensions (si vous en utilisez) */
+/**map breakpoints**/
 /* PARTIELS : dans utils/, vous rangez vos variables, fonctions, mixins et les  
 %placeholders pour les extensions (si vous en utilisez)*/
 /*layouts/ est le dossier où vous mettez vos blocs BEM qui contiennent ce qui est
@@ -272,6 +274,11 @@ header {
   list-style: none;
   counter-reset: compteListe;
 }
+@media screen and (min-width: 1024px) {
+  .operation__steps {
+    display: flex;
+  }
+}
 .operation__step {
   background-color: #f7f7f7;
   border-radius: 20px;
@@ -281,6 +288,12 @@ header {
   align-items: center;
   justify-content: center;
   position: relative;
+}
+@media screen and (min-width: 1024px) {
+  .operation__step {
+    width: 100%;
+    margin: 0px 15px;
+  }
 }
 .operation__step::before {
   counter-increment: compteListe;
@@ -312,6 +325,13 @@ header {
 .restaurant {
   background-color: #f7f7f7;
   padding: 50px 15px 20px 15px;
+}
+@media screen and (min-width: 1024px) {
+  .restaurant__content {
+    display: grid;
+    grid: 0.1 fr 1fr 1fr/1fr 1fr;
+    column-gap: 15px;
+  }
 }
 .restaurant__title {
   padding-bottom: 20px;
@@ -368,6 +388,24 @@ header {
   margin-top: 10px;
   font-weight: 300;
 }
+@media screen and (min-width: 1024px) {
+  .card__topleft--desktop {
+    grid-row: 2/3;
+    grid-column: 1/2;
+  }
+  .card__topright--desktop {
+    grid-row: 2/3;
+    grid-column: 2/3;
+  }
+  .card__bottomleft--desktop {
+    grid-row: 3/4;
+    grid-column: 1/2;
+  }
+  .card__bottomright--desktop {
+    grid-row: 3/4;
+    grid-column: 2/3;
+  }
+}
 
 .heroImg {
   width: 100%;
@@ -415,7 +453,7 @@ header {
   background-color: #99e2d0;
 }
 .menu__card {
-  padding: 10px 10px;
+  padding: 10px 5px;
   margin-bottom: 15px;
   background-color: white;
   border-radius: 10px;

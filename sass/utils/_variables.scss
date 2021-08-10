@@ -10,3 +10,9 @@ $light-color-tertiary: lighten($color-tertiary, 10%);
 $ligth-gray: lighten(#eaeaea, 5%);
 $dark-color-tertiary: darken($color-tertiary, 35%);
 $padding-list: 15px 10px;
+
+/**map breakpoints**/
+$breakpoints: (
+  desktop: 1024px,
+  tablette: 768px,
+);

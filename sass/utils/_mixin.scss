@@ -4,3 +4,9 @@
 @mixin getBackgroundLinearGradient($firstColor, $secondColor) {
   background: linear-gradient(to bottom right, $firstColor, $secondColor);
 }
+
+@mixin desktop {
+  @media screen and (min-width: map-get($breakpoints, desktop)) {
+    @content;
+  }
+}
