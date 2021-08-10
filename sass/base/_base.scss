@@ -12,3 +12,23 @@ h2 {
   font-size: 1.3rem;
   font-weight: 600;
 }
+
+h3 {
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+h4 {
+  font-size: 0.8rem;
+  font-weight: 700;
+  padding-bottom: 5px;
+  white-space: nowrap;
+}
+
+h4 + p {
+  font-size: 0.67rem;
+  font-weight: 300;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}

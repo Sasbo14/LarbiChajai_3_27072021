@@ -1,3 +1,40 @@
-button {
-  @include button;
+.hero__button,
+.button__principal {
+  border: 1px solid $color-secondary;
+  background-color: $color-primary;
+  @include getBackgroundLinearGradient($color-secondary, $color-primary);
+  color: white;
+  padding: 15px 20px;
+  margin-top: 25px;
+  margin-bottom: 40px;
+  border-radius: 25px;
+  font-weight: 500;
+  font-size: 0.8rem;
+  box-shadow: 1px 5px 10px rgba(0, 0, 0, 0.25);
+  cursor: pointer;
+  -webkit-transition-property: width, height; /* -webkit- Chrome et Safari */
+  -moz-transition-property: width, height; /* -moz -Firefox */
+  transition-property: width; /* Navigateur aux normes w3c */
+  transition-duration: 10s;
+
+  &:hover {
+    @include getBackgroundLinearGradient(
+      $light-color-secondary,
+      $light-color-primary
+    );
+    box-shadow: 1px 5px 10px rgba(0, 0, 0, 0.5);
+  }
+
+  /*&:active {
+    @include getBackgroundLinearGradient(
+      $light-color-secondary,
+      $light-color-primary
+    );
+    box-shadow: 1px 5px 10px rgba(0, 0, 0, 0.5);
+  }*/
+}
+
+.button__principal {
+  width: 50%;
+  justify-self: center;
 }

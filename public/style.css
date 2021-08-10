@@ -144,6 +144,26 @@ h2 {
   font-weight: 600;
 }
 
+h3 {
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+h4 {
+  font-size: 0.8rem;
+  font-weight: 700;
+  padding-bottom: 5px;
+  white-space: nowrap;
+}
+
+h4 + p {
+  font-size: 0.67rem;
+  font-weight: 300;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
 /* PARTIELS : dans utils/, vous rangez vos variables, fonctions, mixins et les  
 %placeholders pour les extensions (si vous en utilisez) */
 /* PARTIELS : dans utils/, vous rangez vos variables, fonctions, mixins et les  
@@ -172,9 +192,11 @@ taille ou un footer */
   padding-left: 20px;
 }
 
-button {
+.hero__button,
+.button__principal {
   border: 1px solid #ff79da;
   background-color: #9356dc;
+  background: linear-gradient(to bottom right, #ff79da, #9356dc);
   color: white;
   padding: 15px 20px;
   margin-top: 25px;
@@ -183,16 +205,31 @@ button {
   font-weight: 500;
   font-size: 0.8rem;
   box-shadow: 1px 5px 10px rgba(0, 0, 0, 0.25);
-  background: linear-gradient(to bottom right, #ff79da, #9356dc);
   cursor: pointer;
+  -webkit-transition-property: width, height;
+  /* -webkit- Chrome et Safari */
+  -moz-transition-property: width, height;
+  /* -moz -Firefox */
+  transition-property: width;
+  /* Navigateur aux normes w3c */
+  transition-duration: 10s;
+  /*&:active {
+    @include getBackgroundLinearGradient(
+      $light-color-secondary,
+      $light-color-primary
+    );
+    box-shadow: 1px 5px 10px rgba(0, 0, 0, 0.5);
+  }*/
 }
-button:active {
+.hero__button:hover,
+.button__principal:hover {
   background: linear-gradient(to bottom right, #fface8, #ae80e5);
   box-shadow: 1px 5px 10px rgba(0, 0, 0, 0.5);
 }
-button:hover {
-  background: linear-gradient(to bottom right, #fface8, #ae80e5);
-  box-shadow: 1px 5px 10px rgba(0, 0, 0, 0.5);
+
+.button__principal {
+  width: 50%;
+  justify-self: center;
 }
 
 header {
@@ -289,6 +326,8 @@ header {
   position: absolute;
   top: 15px;
   right: 20px;
+  background-color: transparent;
+  border: transparent 0px solid;
 }
 
 .card {
@@ -334,6 +373,71 @@ header {
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+.menu {
+  background-color: #f6f6f6;
+  border-radius: 20px;
+  margin-top: -50px;
+  padding: 0px 10px;
+  z-index: 1;
+  position: relative;
+  display: grid;
+}
+.menu__title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 15px;
+  font-family: "Shrikhand", cursive;
+}
+.menu__title h2 {
+  font-weight: 100;
+}
+.menu__button {
+  background-color: transparent;
+  border: transparent 0px solid;
+}
+.menu__enter {
+  position: relative;
+}
+.menu__subtitle {
+  padding: 15px 10px;
+}
+.menu__subtitle h3 {
+  padding-bottom: 5px;
+}
+.menu__subtitle::after {
+  content: "";
+  position: absolute;
+  width: 40px;
+  height: 3px;
+  background-color: #99e2d0;
+}
+.menu__card {
+  padding: 10px 10px;
+  margin-bottom: 15px;
+  background-color: white;
+  border-radius: 10px;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: 1fr 1fr;
+}
+.menu__card h4 {
+  grid-column: 1/2;
+  grid-row: 1/2;
+}
+.menu__card p {
+  grid-column: 1/2;
+  grid-row: 2/3;
+}
+
+.items__price {
+  font-size: 0.6rem;
+  grid-row: 2;
+  grid-column: 2/3;
+  grid-row: 2/3;
+  justify-self: end;
 }
 
 /*layouts/ est le dossier où vous mettez vos blocs BEM qui contiennent ce qui est
