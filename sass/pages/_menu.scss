@@ -8,10 +8,16 @@
   background-color: #f6f6f6;
   border-radius: 20px;
   margin-top: -50px;
-  padding: 0px 10px;
+  padding: 15px 10px;
   z-index: 1;
   position: relative;
   display: grid;
+
+  @include tablette {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+  }
 
   &__title {
     display: flex;
@@ -28,6 +34,11 @@
   &__button {
     background-color: transparent;
     border: transparent 0px solid;
+    display: flex;
+    /*position: relative;*/
+    position: absolute;
+    top: 25px;
+    right: 30px;
   }
 
   &__enter {
@@ -77,4 +88,5 @@
   grid-column: 2 / 3;
   grid-row: 2 / 3;
   justify-self: end;
+  padding-right: 10px;
 }

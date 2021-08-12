@@ -103,7 +103,7 @@ header {
   &__content {
     @include desktop {
       display: grid;
-      grid: 0.1 fr 1fr 1fr/ 1fr 1fr;
+      grid: 0.1fr 1fr 1fr/ 1fr 1fr;
       column-gap: 15px;
     }
   }
@@ -121,8 +121,8 @@ header {
 
   &__button {
     position: absolute;
-    top: 15px;
-    right: 20px;
+    top: 16px;
+    right: 15px;
     background-color: transparent;
     border: transparent 0px solid;
   }

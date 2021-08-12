@@ -2,11 +2,18 @@
 %placeholders pour les extensions (si vous en utilisez)*/
 
 @mixin getBackgroundLinearGradient($firstColor, $secondColor) {
+  transition: 0.8s ease-in-out;
   background: linear-gradient(to bottom right, $firstColor, $secondColor);
 }
 
 @mixin desktop {
   @media screen and (min-width: map-get($breakpoints, desktop)) {
+    @content;
+  }
+}
+
+@mixin tablette {
+  @media screen and (min-width: map-get($breakpoints, tablette)) {
     @content;
   }
 }
