@@ -1,12 +1,18 @@
 .heroImg {
-  width: 100%;
+  width: 99%;
   height: 100%;
   object-fit: cover;
+  @include tablette {
+    height: 20rem;
+  }
+  @include desktop {
+    height: 28rem;
+  }
 }
 
 .menu {
   background-color: #f6f6f6;
-  border-radius: 20px;
+  border-radius: 60px;
   margin-top: -50px;
   padding: 15px 10px;
   z-index: 1;
@@ -19,6 +25,16 @@
     margin-right: auto;
   }
 
+  @include desktop {
+    width: 95%;
+
+    &__content {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: 1fr 2fr;
+      column-gap: 10px;
+    }
+  }
   &__title {
     display: flex;
     align-items: center;
@@ -28,6 +44,9 @@
 
     & h2 {
       font-weight: 100;
+    }
+    @include desktop {
+      grid-area: 1 / 1 / 2 / 4;
     }
   }
 
@@ -39,12 +58,28 @@
     position: absolute;
     top: 25px;
     right: 30px;
+    @include desktop {
+      top: 65px;
+    }
   }
 
+  /***animation des cartes apparition progressive***/
   &__enter {
+    animation: cardsappear 0.4s 0.3s ease-in-out;
+    animation-fill-mode: both;
     position: relative;
   }
 
+  &__dishes {
+    animation: cardsappear 0.4s 0.5s ease-in-out;
+    animation-fill-mode: both;
+  }
+
+  &__dessert {
+    animation: cardsappear 0.4s 0.7s ease-in-out;
+    animation-fill-mode: both;
+  }
+  /***fin de l'animation***/
   &__subtitle {
     padding: 15px 10px;
 
@@ -66,6 +101,7 @@
     margin-bottom: 15px;
     background-color: white;
     border-radius: 10px;
+    box-shadow: 0.25rem 0.25rem 1rem rgba(0, 0, 0, 0.1);
     display: grid;
     grid-template-columns: 2fr 1fr;
     grid-template-rows: 1fr 1fr;

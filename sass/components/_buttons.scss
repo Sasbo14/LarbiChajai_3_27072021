@@ -37,6 +37,12 @@
 .button__principal {
   width: 50%;
   justify-self: center;
+  @include tablette {
+    width: 30%;
+  }
+  @include desktop {
+    width: 20%;
+  }
 }
 /**bouton des coeurs**/
 .restaurant,

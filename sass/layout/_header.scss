@@ -2,30 +2,37 @@
 réutilisable, par exemple un header pour les mises en page de grande
 taille ou un footer */
 
+/**header page d'acceuil***/
 .logo {
   display: flex;
   justify-content: center;
   padding: 15px 0px;
+
   img {
     width: 50%;
     @include tablette {
       width: 40%;
     }
     @include desktop {
-      width: 30%;
+      width: 40%;
     }
   }
 }
 
+/***header page restaurants***/
 .header {
   display: grid;
   grid-template-columns: 1fr 2fr;
   padding: 15px 0px;
-  &__logo img {
+  &__logo > img {
     width: 50%;
   }
 
   &__arrow {
     padding-left: 20px;
+
+    @include tablette {
+      font-size: 1.9rem;
+    }
   }
 }

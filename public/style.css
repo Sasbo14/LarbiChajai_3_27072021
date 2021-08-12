@@ -170,9 +170,18 @@ h4 + p {
 /**map breakpoints**/
 /* PARTIELS : dans utils/, vous rangez vos variables, fonctions, mixins et les  
 %placeholders pour les extensions (si vous en utilisez)*/
+@keyframes cardsappear {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
 /*layouts/ est le dossier où vous mettez vos blocs BEM qui contiennent ce qui est
 réutilisable, par exemple un header pour les mises en page de grande
 taille ou un footer */
+/**header page d'acceuil***/
 .logo {
   display: flex;
   justify-content: center;
@@ -188,20 +197,26 @@ taille ou un footer */
 }
 @media screen and (min-width: 1024px) {
   .logo img {
-    width: 30%;
+    width: 40%;
   }
 }
 
+/***header page restaurants***/
 .header {
   display: grid;
   grid-template-columns: 1fr 2fr;
   padding: 15px 0px;
 }
-.header__logo img {
+.header__logo > img {
   width: 50%;
 }
 .header__arrow {
   padding-left: 20px;
+}
+@media screen and (min-width: 768px) {
+  .header__arrow {
+    font-size: 1.9rem;
+  }
 }
 
 .hero__button,
@@ -241,6 +256,16 @@ taille ou un footer */
 .button__principal {
   width: 50%;
   justify-self: center;
+}
+@media screen and (min-width: 768px) {
+  .button__principal {
+    width: 30%;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .button__principal {
+    width: 20%;
+  }
 }
 
 /**bouton des coeurs**/
@@ -447,25 +472,48 @@ header {
 }
 
 .heroImg {
-  width: 100%;
+  width: 99%;
   height: 100%;
   object-fit: cover;
+}
+@media screen and (min-width: 768px) {
+  .heroImg {
+    height: 20rem;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .heroImg {
+    height: 28rem;
+  }
 }
 
 .menu {
   background-color: #f6f6f6;
-  border-radius: 20px;
+  border-radius: 60px;
   margin-top: -50px;
   padding: 15px 10px;
   z-index: 1;
   position: relative;
   display: grid;
+  /***animation des cartes apparition progressive***/
+  /***fin de l'animation***/
 }
 @media screen and (min-width: 768px) {
   .menu {
     width: 80%;
     margin-left: auto;
     margin-right: auto;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .menu {
+    width: 95%;
+  }
+  .menu__content {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr 2fr;
+    column-gap: 10px;
   }
 }
 .menu__title {
@@ -478,6 +526,11 @@ header {
 .menu__title h2 {
   font-weight: 100;
 }
+@media screen and (min-width: 1024px) {
+  .menu__title {
+    grid-area: 1/1/2/4;
+  }
+}
 .menu__button {
   background-color: transparent;
   border: transparent 0px solid;
@@ -487,8 +540,23 @@ header {
   top: 25px;
   right: 30px;
 }
+@media screen and (min-width: 1024px) {
+  .menu__button {
+    top: 65px;
+  }
+}
 .menu__enter {
+  animation: cardsappear 0.4s 0.3s ease-in-out;
+  animation-fill-mode: both;
   position: relative;
+}
+.menu__dishes {
+  animation: cardsappear 0.4s 0.5s ease-in-out;
+  animation-fill-mode: both;
+}
+.menu__dessert {
+  animation: cardsappear 0.4s 0.7s ease-in-out;
+  animation-fill-mode: both;
 }
 .menu__subtitle {
   padding: 15px 10px;
@@ -508,6 +576,7 @@ header {
   margin-bottom: 15px;
   background-color: white;
   border-radius: 10px;
+  box-shadow: 0.25rem 0.25rem 1rem rgba(0, 0, 0, 0.1);
   display: grid;
   grid-template-columns: 2fr 1fr;
   grid-template-rows: 1fr 1fr;
