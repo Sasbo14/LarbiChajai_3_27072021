@@ -12,10 +12,6 @@
 
 .menu {
   background-color: #f6f6f6;
-  border-radius: 60px;
-  margin-top: -50px;
-  padding: 15px 10px;
-  z-index: 1;
   position: relative;
   display: grid;
 
@@ -27,16 +23,27 @@
 
   @include desktop {
     width: 95%;
+  }
 
-    &__content {
+  &__category {
+    background-color: #f6f6f6;
+    position: relative;
+    z-index: 1;
+    border-radius: 60px;
+    margin-top: -50px;
+    padding: 15px 10px;
+
+    @include desktop {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       grid-template-rows: 1fr 2fr;
       column-gap: 10px;
     }
   }
+
   &__title {
     display: flex;
+    position: relative;
     align-items: center;
     justify-content: space-between;
     padding: 20px 15px;
@@ -50,36 +57,33 @@
     }
   }
 
-  &__button {
+  &__buttonHeart {
     background-color: transparent;
     border: transparent 0px solid;
     display: flex;
-    /*position: relative;*/
+    position: relative;
     position: absolute;
-    top: 25px;
+    top: 15px;
     right: 30px;
     @include desktop {
-      top: 65px;
+      top: 55px;
+    }
+  }
+  //animation
+  &__description {
+    animation: cardsappear 0.4s 0.3s ease-in-out;
+    animation-fill-mode: both;
+    &:nth-child(1) {
+      animation-delay: 0.5s;
+    }
+    &:nth-child(2) {
+      animation-delay: 0s;
+    }
+    &:last-child {
+      animation-delay: 0.7s;
     }
   }
 
-  /***animation des cartes apparition progressive***/
-  &__enter {
-    animation: cardsappear 0.4s 0.3s ease-in-out;
-    animation-fill-mode: both;
-    position: relative;
-  }
-
-  &__dishes {
-    animation: cardsappear 0.4s 0.5s ease-in-out;
-    animation-fill-mode: both;
-  }
-
-  &__dessert {
-    animation: cardsappear 0.4s 0.7s ease-in-out;
-    animation-fill-mode: both;
-  }
-  /***fin de l'animation***/
   &__subtitle {
     padding: 15px 10px;
 

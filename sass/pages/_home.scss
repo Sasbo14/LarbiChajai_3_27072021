@@ -9,7 +9,6 @@ header {
   justify-content: center;
   padding: 15px 0px;
   background-color: #eaeaea;
-  position: relative;
 
   &__text {
     padding: 0px 20px;
@@ -17,7 +16,6 @@ header {
 }
 
 .hero {
-  display: block;
   background-color: $ligth-gray;
   text-align: center;
 
@@ -119,7 +117,7 @@ header {
     border-radius: 20px;
   }
 
-  &__button {
+  &__buttonHeart {
     position: absolute;
     top: 16px;
     right: 15px;

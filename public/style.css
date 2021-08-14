@@ -195,26 +195,26 @@ taille ou un footer */
     width: 40%;
   }
 }
-@media screen and (min-width: 1024px) {
-  .logo img {
-    width: 40%;
-  }
-}
 
 /***header page restaurants***/
-.header {
+header {
   display: grid;
   grid-template-columns: 1fr 2fr;
   padding: 15px 0px;
 }
-.header__logo > img {
+header .header__logo > img {
   width: 50%;
 }
-.header__arrow {
+header .headerLink {
   padding-left: 20px;
 }
+header .headerLink > a {
+  text-decoration: none;
+  color: black;
+  cursor: pointer;
+}
 @media screen and (min-width: 768px) {
-  .header__arrow {
+  header .headerLink {
     font-size: 1.9rem;
   }
 }
@@ -223,7 +223,7 @@ taille ou un footer */
 .button__principal {
   border: 1px solid #ff79da;
   background-color: #9356dc;
-  transition: 0.8s ease-in-out;
+  /*transition: 0.8s ease-in-out;*/
   background: linear-gradient(to bottom right, #ff79da, #9356dc);
   color: white;
   padding: 15px 20px;
@@ -234,10 +234,6 @@ taille ou un footer */
   font-size: 0.9rem;
   box-shadow: 1px 5px 10px rgba(0, 0, 0, 0.25);
   cursor: pointer;
-  /*-webkit-transition-property: width, height; /* -webkit- Chrome et Safari */
-  /*-moz-transition-property: width, height; /* -moz -Firefox */
-  /*transition-property: width; /* Navigateur aux normes w3c */
-  /*transition-duration: 10s;*/
   /*&:active {
     @include getBackgroundLinearGradient(
       $light-color-secondary,
@@ -248,7 +244,7 @@ taille ou un footer */
 }
 .hero__button:hover,
 .button__principal:hover {
-  transition: 0.8s ease-in-out;
+  /*transition: 0.8s ease-in-out;*/
   background: linear-gradient(to bottom right, #fface8, #ae80e5);
   box-shadow: 1px 5px 10px rgba(0, 0, 0, 0.5);
 }
@@ -268,14 +264,14 @@ taille ou un footer */
   }
 }
 
-/**bouton des coeurs**/
-.restaurant__button,
-.menu__button {
+/**bouton en coeurs**/
+.restaurant__buttonHeart,
+.menu__buttonHeart {
   display: flex;
   position: relative;
 }
-.restaurant__button:hover,
-.menu__button:hover {
+.restaurant__buttonHeart:hover,
+.menu__buttonHeart:hover {
   color: transparent;
   transition: 0.5s ease-in-out;
 }
@@ -309,14 +305,12 @@ header {
   justify-content: center;
   padding: 15px 0px;
   background-color: #eaeaea;
-  position: relative;
 }
 .location__text {
   padding: 0px 20px;
 }
 
 .hero {
-  display: block;
   background-color: #f7f7f7;
   text-align: center;
 }
@@ -406,7 +400,7 @@ header {
   background-color: white;
   border-radius: 20px;
 }
-.restaurant__button {
+.restaurant__buttonHeart {
   position: absolute;
   top: 16px;
   right: 15px;
@@ -489,14 +483,8 @@ header {
 
 .menu {
   background-color: #f6f6f6;
-  border-radius: 60px;
-  margin-top: -50px;
-  padding: 15px 10px;
-  z-index: 1;
   position: relative;
   display: grid;
-  /***animation des cartes apparition progressive***/
-  /***fin de l'animation***/
 }
 @media screen and (min-width: 768px) {
   .menu {
@@ -509,7 +497,17 @@ header {
   .menu {
     width: 95%;
   }
-  .menu__content {
+}
+.menu__category {
+  background-color: #f6f6f6;
+  position: relative;
+  z-index: 1;
+  border-radius: 60px;
+  margin-top: -50px;
+  padding: 15px 10px;
+}
+@media screen and (min-width: 1024px) {
+  .menu__category {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: 1fr 2fr;
@@ -518,6 +516,7 @@ header {
 }
 .menu__title {
   display: flex;
+  position: relative;
   align-items: center;
   justify-content: space-between;
   padding: 20px 15px;
@@ -531,32 +530,32 @@ header {
     grid-area: 1/1/2/4;
   }
 }
-.menu__button {
+.menu__buttonHeart {
   background-color: transparent;
   border: transparent 0px solid;
   display: flex;
-  /*position: relative;*/
+  position: relative;
   position: absolute;
-  top: 25px;
+  top: 15px;
   right: 30px;
 }
 @media screen and (min-width: 1024px) {
-  .menu__button {
-    top: 65px;
+  .menu__buttonHeart {
+    top: 55px;
   }
 }
-.menu__enter {
+.menu__description {
   animation: cardsappear 0.4s 0.3s ease-in-out;
   animation-fill-mode: both;
-  position: relative;
 }
-.menu__dishes {
-  animation: cardsappear 0.4s 0.5s ease-in-out;
-  animation-fill-mode: both;
+.menu__description:nth-child(1) {
+  animation-delay: 0.5s;
 }
-.menu__dessert {
-  animation: cardsappear 0.4s 0.7s ease-in-out;
-  animation-fill-mode: both;
+.menu__description:nth-child(2) {
+  animation-delay: 0s;
+}
+.menu__description:last-child {
+  animation-delay: 0.7s;
 }
 .menu__subtitle {
   padding: 15px 10px;

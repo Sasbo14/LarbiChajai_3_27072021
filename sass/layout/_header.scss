@@ -13,23 +13,26 @@ taille ou un footer */
     @include tablette {
       width: 40%;
     }
-    @include desktop {
-      width: 40%;
-    }
   }
 }
 
 /***header page restaurants***/
-.header {
+header {
   display: grid;
   grid-template-columns: 1fr 2fr;
   padding: 15px 0px;
-  &__logo > img {
+  .header__logo > img {
     width: 50%;
   }
 
-  &__arrow {
+  .headerLink {
     padding-left: 20px;
+
+    & > a {
+      text-decoration: none;
+      color: black;
+      cursor: pointer;
+    }
 
     @include tablette {
       font-size: 1.9rem;
