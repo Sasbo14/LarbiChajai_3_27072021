@@ -89,6 +89,7 @@
 
     & h3 {
       padding-bottom: 5px;
+      text-transform: uppercase;
     }
 
     &::after {
@@ -106,27 +107,69 @@
     background-color: white;
     border-radius: 10px;
     box-shadow: 0.25rem 0.25rem 1rem rgba(0, 0, 0, 0.1);
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    grid-template-rows: 1fr 1fr;
+    display: flex;
+    position: relative;
+    overflow: hidden;
+    //width: 95%;
 
-    & h4 {
-      grid-column: 1 / 2;
-      grid-row: 1 / 2;
-    }
-
-    & p {
-      grid-column: 1 / 2;
-      grid-row: 2 / 3;
+    &:hover {
+      .menu__name {
+        width: 60%;
+      }
+      .menu__price {
+        transform: translateX(-12vh);
+        /*top: 28px;
+        right: 65px;*/
+      }
+      .menu__containerIcon {
+        transform: scaleX(1);
+        & > i {
+          transform: rotate(0deg);
+        }
+      }
+      cursor: pointer;
     }
   }
-}
 
-.items__price {
-  font-size: 0.6rem;
-  grid-row: 2;
-  grid-column: 2 / 3;
-  grid-row: 2 / 3;
-  justify-self: end;
-  padding-right: 10px;
+  &__name {
+    width: 100%;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    transition: 300ms ease-in-out;
+  }
+
+  &__price {
+    font-size: 0.9rem;
+    margin-right: 0.2rem;
+    align-self: flex-end;
+    position: absolute;
+    top: 28px;
+    right: 5px;
+    transition: transform 300ms ease-in-out;
+  }
+
+  &__containerIcon {
+    color: $color-tertiary;
+    background-color: $color-tertiary;
+    display: flex;
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: scaleX(0);
+    transform-origin: 100% 50%;
+    transition: transform 300ms ease-in-out;
+    overflow: hidden;
+    justify-content: center;
+    align-items: center;
+    width: 20%;
+    height: 100%;
+
+    & > i {
+      color: white;
+      //background-color: $color-tertiary;
+      font-size: 25px;
+      transform: rotate(-360deg);
+      transition: 500ms ease-in-out;
+    }
+  }
 }
