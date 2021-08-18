@@ -6,6 +6,19 @@
   background: linear-gradient(to bottom right, $firstColor, $secondColor);
 }
 
+@mixin loaderColorPositionBars {
+  background: linear-gradient(
+    to right,
+    rgba(229, 17, 21, 1) 0%,
+    rgba(254, 254, 254, 1) 30%,
+    rgba(254, 254, 254, 1) 47%,
+    rgba(254, 254, 254, 1) 71%,
+    rgba(229, 17, 21, 1) 100%
+  );
+  margin: auto;
+  position: fixed;
+}
+
 @mixin desktop {
   @media screen and (min-width: map-get($breakpoints, desktop)) {
     @content;

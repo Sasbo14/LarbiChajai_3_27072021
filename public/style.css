@@ -170,6 +170,87 @@ h4 + p {
 /**map breakpoints**/
 /* PARTIELS : dans utils/, vous rangez vos variables, fonctions, mixins et les  
 %placeholders pour les extensions (si vous en utilisez)*/
+/**creation du loader***/
+.loader {
+  z-index: 9999;
+  position: fixed;
+  opacity: 0;
+  animation: loader 2s ease-in-out;
+}
+.loader__item1 {
+  width: 100px;
+  height: 100px;
+  border-top: 5px solid #ff79da;
+  border-bottom: 5px solid #9356dc;
+  border-left: 8px solid #99e2d0;
+  border-right: 10px ridge #99e2d0;
+  border-radius: 50%;
+  background: #fface8;
+  margin: auto;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+.loader__item2 {
+  width: 50px;
+  height: 5px;
+  top: 3px;
+  left: 0;
+  right: 50px;
+  bottom: 0;
+  background: linear-gradient(to right, #e51115 0%, #fefefe 30%, #fefefe 47%, #fefefe 71%, #e51115 100%);
+  margin: auto;
+  position: fixed;
+  transform: rotate(360deg);
+  transform-origin: 100% 0%;
+  animation: transform 1.6s infinite ease-in-out;
+}
+.loader__item3 {
+  width: 5px;
+  height: 45px;
+  top: 45px;
+  left: 0;
+  right: 0px;
+  bottom: 0;
+  background: linear-gradient(to right, #e51115 0%, #fefefe 30%, #fefefe 47%, #fefefe 71%, #e51115 100%);
+  margin: auto;
+  position: fixed;
+}
+
+/****animation loader****/
+@keyframes fond {
+  0% {
+    opacity: 0.1;
+  }
+  99% {
+    opacity: 0.1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes loader {
+  0% {
+    opacity: 1;
+  }
+  70% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes transform {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+/**animation de l'apparition progressive des cartes de menu****/
 @keyframes cardsappear {
   0% {
     transform: scale(0);
@@ -295,6 +376,12 @@ header .headerLink > a {
   transition: 0.5s ease-in-out;
   right: 0px;
   top: 0px;
+}
+
+.logo,
+.homeContent,
+.homeFooter {
+  animation: fond 2s;
 }
 
 .location {
@@ -542,7 +629,7 @@ header .headerLink > a {
   }
 }
 .menu__description {
-  animation: cardsappear 0.4s 0.3s ease-in-out;
+  animation: cardsappear 0.4s 300ms ease-in-out;
   animation-fill-mode: both;
 }
 .menu__description:nth-child(1) {
@@ -585,7 +672,8 @@ header .headerLink > a {
   width: 60%;
 }
 .menu__card:hover .menu__price {
-  transform: translateX(-12vh);
+  transform: translateX(-7vh);
+  margin: 0px;
   /*top: 28px;
   right: 65px;*/
 }
@@ -608,6 +696,7 @@ header .headerLink > a {
   position: absolute;
   top: 28px;
   right: 5px;
+  width: 8%;
   transition: transform 300ms ease-in-out;
 }
 .menu__containerIcon {
@@ -623,7 +712,7 @@ header .headerLink > a {
   overflow: hidden;
   justify-content: center;
   align-items: center;
-  width: 20%;
+  width: 13%;
   height: 100%;
 }
 .menu__containerIcon > i {

@@ -4,6 +4,7 @@
 <head>
     <title>Oh my food</title>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="device-width, initial-scale=1.0, user-scalable=1">
     <meta name="description"
         content="Ohmyfood! est une entreprise de commande de repas en ligne. Notre concept permet aux utilisateurs de composer leur propre menu et réduire leur temps d’attente dans les restaurants.">
@@ -16,11 +17,17 @@
 </head>
 
 <body>
+    <div class="loader">
+        <div class="loader__item1"></div>
+        <div class="loader__item2"></div>
+        <div class="loader__item3"></div>
+    </div>
+
     <header class="logo">
         <img src="images/logo/ohmyfood.png" alt="logo du site ohmyfood">
     </header>
 
-    <main>
+    <main class="homeContent">
         <div class="location">
             <div class="location__icon">
                 <i class="fas fa-map-marker-alt"></i>
@@ -140,7 +147,7 @@
         </section>
     </main>
 
-    <footer class="footer">
+    <footer class="homeFooter">
         <h2 class="footer__title">ohmyfood</h2>
 
         <ul class="footer__list">
