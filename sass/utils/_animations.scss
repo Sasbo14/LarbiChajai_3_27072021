@@ -30,7 +30,7 @@
     left: 0;
     right: 50px;
     bottom: 0;
-    @include loaderColorPositionBars;
+    @include loaderColorPositionBar;
     transform: rotate(360deg);
     transform-origin: 100% 0%;
     animation: transform 1.6s infinite ease-in-out;
@@ -43,7 +43,7 @@
     left: 0;
     right: 0px;
     bottom: 0;
-    @include loaderColorPositionBars;
+    @include loaderColorPositionBar;
   }
 }
 

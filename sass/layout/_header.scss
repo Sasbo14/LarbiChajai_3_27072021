@@ -10,6 +10,7 @@ taille ou un footer */
 
   img {
     width: 50%;
+    max-width: 700px;
     @include tablette {
       width: 40%;
     }

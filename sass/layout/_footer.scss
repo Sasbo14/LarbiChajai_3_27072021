@@ -47,13 +47,13 @@ taille ou un footer */
   &__element {
     padding: 10px 15px;
 
-    & a {
+    & > a {
       color: white;
       outline: none;
       text-decoration: none;
     }
 
-    & i {
+    & > i {
       padding-right: 10px;
     }
   }

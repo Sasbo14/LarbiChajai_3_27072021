@@ -6,7 +6,7 @@
   background: linear-gradient(to bottom right, $firstColor, $secondColor);
 }
 
-@mixin loaderColorPositionBars {
+@mixin loaderColorPositionBar {
   background: linear-gradient(
     to right,
     rgba(229, 17, 21, 1) 0%,
