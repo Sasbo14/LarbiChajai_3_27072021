@@ -1,13 +1,7 @@
 .heroImg {
-  width: 99%;
-  height: 100%;
+  width: 100%;
+  max-height: 15rem;
   object-fit: cover;
-  @include tablette {
-    height: 20rem;
-  }
-  @include desktop {
-    height: 28rem;
-  }
 }
 
 .menu {
@@ -34,6 +28,7 @@
     padding: 15px 10px;
 
     @include desktop {
+      margin-top: -30px;
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       grid-template-rows: 1fr 2fr;
