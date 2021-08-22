@@ -685,8 +685,6 @@ header .headerLink > a {
 .menu__card:hover .menu__price {
   transform: translateX(-7vh);
   margin: 0px;
-  /*top: 28px;
-  right: 65px;*/
 }
 .menu__card:hover .menu__containerCheckIcon {
   transform: scaleX(1);
