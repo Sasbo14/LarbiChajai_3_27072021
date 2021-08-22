@@ -33,16 +33,14 @@ h3 {
 }
 
 h4 {
+  @include ellipsis;
   font-size: map-get($font-size, h4);
   font-weight: 700;
   padding-bottom: 5px;
-  white-space: nowrap;
 }
 
-h4 + p {
+p {
   font-size: map-get($font-size, p);
   font-weight: 300;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
+  @include ellipsis;
 }

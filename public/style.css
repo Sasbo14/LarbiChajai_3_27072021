@@ -1,4 +1,98 @@
 @charset "UTF-8";
+/* PARTIELS : dans utils/, vous rangez vos variables, fonctions, mixins et les  
+%placeholders pour les extensions (si vous en utilisez) */
+/**map breakpoints**/
+/* PARTIELS : dans utils/, vous rangez vos variables, fonctions, mixins et les  
+%placeholders pour les extensions (si vous en utilisez)*/
+/**creation du loader***/
+.loader {
+  z-index: 9999;
+  position: fixed;
+  opacity: 0;
+  animation: loader 2s ease-in-out;
+}
+.loader__item1 {
+  width: 100px;
+  height: 100px;
+  border-top: 5px solid #ff79da;
+  border-bottom: 5px solid #9356dc;
+  border-left: 8px solid #99e2d0;
+  border-right: 10px ridge #99e2d0;
+  border-radius: 50%;
+  background: #fface8;
+  margin: auto;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+.loader__item2 {
+  width: 50px;
+  height: 5px;
+  top: 3px;
+  left: 0;
+  right: 50px;
+  bottom: 0;
+  background: linear-gradient(to right, #e51115 0%, #fefefe 30%, #fefefe 47%, #fefefe 71%, #e51115 100%);
+  margin: auto;
+  position: fixed;
+  transform: rotate(360deg);
+  transform-origin: 100% 0%;
+  animation: transform 1.6s infinite ease-in-out;
+}
+.loader__item3 {
+  width: 5px;
+  height: 45px;
+  top: 45px;
+  left: 0;
+  right: 0px;
+  bottom: 0;
+  background: linear-gradient(to right, #e51115 0%, #fefefe 30%, #fefefe 47%, #fefefe 71%, #e51115 100%);
+  margin: auto;
+  position: fixed;
+}
+
+/****animation loader****/
+@keyframes fond {
+  0% {
+    opacity: 0.1;
+  }
+  99% {
+    opacity: 0.1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes loader {
+  0% {
+    opacity: 1;
+  }
+  70% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes transform {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+/**animation de l'apparition progressive des cartes de menu****/
+@keyframes cardsappear {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
 /*****RESET*******/
 html,
 body,
@@ -157,114 +251,22 @@ h3 {
 }
 
 h4 {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
   font-size: 0.9rem;
   font-weight: 700;
   padding-bottom: 5px;
-  white-space: nowrap;
 }
 
-h4 + p {
+p {
   font-size: 0.8rem;
   font-weight: 300;
-  overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+  overflow: hidden;
 }
 
-/* PARTIELS : dans utils/, vous rangez vos variables, fonctions, mixins et les  
-%placeholders pour les extensions (si vous en utilisez) */
-/**map breakpoints**/
-/* PARTIELS : dans utils/, vous rangez vos variables, fonctions, mixins et les  
-%placeholders pour les extensions (si vous en utilisez)*/
-/**creation du loader***/
-.loader {
-  z-index: 9999;
-  position: fixed;
-  opacity: 0;
-  animation: loader 2s ease-in-out;
-}
-.loader__item1 {
-  width: 100px;
-  height: 100px;
-  border-top: 5px solid #ff79da;
-  border-bottom: 5px solid #9356dc;
-  border-left: 8px solid #99e2d0;
-  border-right: 10px ridge #99e2d0;
-  border-radius: 50%;
-  background: #fface8;
-  margin: auto;
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-}
-.loader__item2 {
-  width: 50px;
-  height: 5px;
-  top: 3px;
-  left: 0;
-  right: 50px;
-  bottom: 0;
-  background: linear-gradient(to right, #e51115 0%, #fefefe 30%, #fefefe 47%, #fefefe 71%, #e51115 100%);
-  margin: auto;
-  position: fixed;
-  transform: rotate(360deg);
-  transform-origin: 100% 0%;
-  animation: transform 1.6s infinite ease-in-out;
-}
-.loader__item3 {
-  width: 5px;
-  height: 45px;
-  top: 45px;
-  left: 0;
-  right: 0px;
-  bottom: 0;
-  background: linear-gradient(to right, #e51115 0%, #fefefe 30%, #fefefe 47%, #fefefe 71%, #e51115 100%);
-  margin: auto;
-  position: fixed;
-}
-
-/****animation loader****/
-@keyframes fond {
-  0% {
-    opacity: 0.1;
-  }
-  99% {
-    opacity: 0.1;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-@keyframes loader {
-  0% {
-    opacity: 1;
-  }
-  70% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-  }
-}
-@keyframes transform {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
-/**animation de l'apparition progressive des cartes de menu****/
-@keyframes cardsappear {
-  0% {
-    transform: scale(0);
-  }
-  100% {
-    transform: scale(1);
-  }
-}
 /*layouts/ est le dossier où vous mettez vos blocs BEM qui contiennent ce qui est
 réutilisable, par exemple un header pour les mises en page de grande
 taille ou un footer */
@@ -569,7 +571,7 @@ header .headerLink > a {
 
 .heroImg {
   width: 100%;
-  max-height: 15rem;
+  max-height: 20rem;
   object-fit: cover;
 }
 
@@ -694,9 +696,10 @@ header .headerLink > a {
 }
 .menu__name {
   width: 100%;
-  text-overflow: ellipsis;
-  overflow: hidden;
   transition: 300ms ease-in-out;
+}
+.menu__name--wrap {
+  white-space: inherit;
 }
 .menu__price {
   font-size: 0.9rem;

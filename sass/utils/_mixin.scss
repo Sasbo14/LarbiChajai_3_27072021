@@ -1,6 +1,12 @@
 /* PARTIELS : dans utils/, vous rangez vos variables, fonctions, mixins et les  
 %placeholders pour les extensions (si vous en utilisez)*/
 
+@mixin ellipsis {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
 @mixin getBackgroundLinearGradient($firstColor, $secondColor) {
   /*transition: 0.8s ease-in-out;*/
   background: linear-gradient(to bottom right, $firstColor, $secondColor);
