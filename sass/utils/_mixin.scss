@@ -8,7 +8,6 @@
 }
 
 @mixin getBackgroundLinearGradient($firstColor, $secondColor) {
-  /*transition: 0.8s ease-in-out;*/
   background: linear-gradient(to bottom right, $firstColor, $secondColor);
 }
 

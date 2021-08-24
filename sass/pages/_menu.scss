@@ -56,7 +56,6 @@
     background-color: transparent;
     border: transparent 0px solid;
     display: flex;
-    position: relative;
     position: absolute;
     top: 15px;
     right: 30px;
@@ -86,7 +85,7 @@
       padding-bottom: 5px;
       text-transform: uppercase;
     }
-
+    /**petite barre de soulignement**/
     &::after {
       content: "";
       position: absolute;
@@ -106,6 +105,7 @@
     position: relative;
     overflow: hidden;
 
+    /**coche de validation au survol**/
     &:hover {
       .menu__name {
         width: 60%;

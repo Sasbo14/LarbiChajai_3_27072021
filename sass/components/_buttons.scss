@@ -21,14 +21,6 @@
     );
     box-shadow: 1px 5px 10px rgba(0, 0, 0, 0.5);
   }
-
-  /*&:active {
-    @include getBackgroundLinearGradient(
-      $light-color-secondary,
-      $light-color-primary
-    );
-    box-shadow: 1px 5px 10px rgba(0, 0, 0, 0.5);
-  }*/
 }
 
 .button__principal {
